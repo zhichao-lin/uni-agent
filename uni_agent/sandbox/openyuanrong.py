@@ -22,6 +22,7 @@ if TYPE_CHECKING:
     from .base import SandboxConfig
 
 logger = logging.getLogger(__name__)
+logger.setLevel(os.getenv("VERL_LOGGING_LEVEL", "INFO"))
 
 _sdk_initialized = False
 
