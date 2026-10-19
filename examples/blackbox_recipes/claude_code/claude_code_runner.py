@@ -222,6 +222,10 @@ async def _create_claude_sandbox(
             "mounts": [{"target": TOOL_TARGET, "image_url": sidecar_image}],
             "upstream": upstream,
             "proxy_port": proxy_port,
+            "cpu": 500,
+            "memory": 1024,
+            "create_timeout": 300,
+            "schedule_timeout": 180,
         },
     )
     sandbox = build_sandbox(config)
